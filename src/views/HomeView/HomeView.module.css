@@ -1,0 +1,23 @@
+.container {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  flex-direction: column;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+  letter-spacing: 10px;
+  color: #0e4617;
+  text-shadow: 4px 3px 12px rgba(19, 41, 13, 0.77);
+}
+.titleSpan {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 40px;
+  color: #0e4617;
+  font-weight: 900;
+  font-style: italic;
+}
