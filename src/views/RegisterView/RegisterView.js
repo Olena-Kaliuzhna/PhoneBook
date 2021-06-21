@@ -4,6 +4,7 @@ import authOperations from '../../redux/auth/auth-operations';
 import s from './RegisterView.module.css';
 
 export default function RegisterView() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,6 +17,9 @@ export default function RegisterView() {
     const { name, value } = e.target;
 
     switch (name) {
+      case 'name':
+        setName(value);
+        break;
       case 'email':
         setEmail(value);
         break;
@@ -32,7 +36,7 @@ export default function RegisterView() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    onRegister({ email, password });
+    onRegister({ name, email, password });
     setEmail('');
     setPassword('');
   };
@@ -41,6 +45,17 @@ export default function RegisterView() {
     <div className={s.container}>
       <h1 className={s.title}>Registration</h1>
       <form onSubmit={handleSubmit} className={s.wrapper} autoComplete="off">
+        <label className={s.field}>
+          <span className={s.name}>Name</span>
+          <input
+            className={s.input}
+            type="name"
+            name="name"
+            value={name}
+            placeholder="Enter name"
+            onChange={handleChange}
+          />
+        </label>
         <label className={s.field}>
           <span className={s.email}>Email</span>
           <input

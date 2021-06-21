@@ -4,6 +4,7 @@ import phoneBookOperations from '../../redux/phoneBook/phoneBook-operations';
 import phoneBookSelectors from '../../redux/phoneBook/phoneBook-selectors';
 import ErrorPopup from '../ErrorPopup/ErrorPopup';
 import s from './ContactForm.module.css';
+import InputMask from 'react-input-mask';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -74,7 +75,9 @@ export default function ContactForm() {
         </label>
         <label className={s.field}>
           <span className={s.number}>Number</span>
-          <input
+          <InputMask
+            mask="+38\0 99 999 99 99"
+            maskChar=" "
             className={s.input}
             type="tel"
             name="number"
