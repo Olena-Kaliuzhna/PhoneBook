@@ -26,7 +26,9 @@ export default function LoginView() {
     }
   };
 
-  const onLogin = useCallback(e => dispatch(authOperations.logIn(e)));
+  const onLogin = useCallback(e => dispatch(authOperations.logIn(e)), [
+        dispatch,
+    ]);
 
   const handleSubmit = e => {
     e.preventDefault();
